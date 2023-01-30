@@ -1,0 +1,31 @@
+:root .dark {
+  --bg-screen-color: rgb(50, 45, 55);
+  --bg-color: rgb(30, 30, 40);
+  --bg-sub-color: rgb(40, 40, 50);
+
+  --main-color: rgb(255, 255, 255);
+  --primary-color: rgb(255, 90, 30);
+  --primary-light-color: rgb(255, 125, 90);
+  --disable-color: rgb(75, 70, 85);
+  --sub-color: rgb(100, 100, 100);
+
+  --button-text-color: rgb(255, 255, 255);
+}
+
+:root .light {
+  --bg-screen-color: rgb(230, 230, 230);
+  --bg-color: rgb(255, 255, 255);
+  --bg-sub-color: rgb(245, 245, 245);
+
+  --main-color: rgb(50, 50, 50);
+  --primary-color: rgb(255, 90, 30);
+  --primary-light-color: rgb(255, 125, 90);
+  --disable-color: rgb(200, 200, 200);
+  --sub-color: rgb(170, 170, 170);
+
+  --button-text-color: rgb(255, 255, 255);
+}
+
+:root {
+  --transition-delay: 0.25s;
+}

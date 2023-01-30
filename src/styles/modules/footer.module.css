@@ -1,0 +1,36 @@
+.container {
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.container > input[type='text'] {
+  flex: auto 1 0;
+
+  background-color: var(--bg-sub-color);
+  color: var(--main-color);
+
+  border-radius: 0.25rem 0 0 0.25rem;
+  border: none;
+  padding-left: 0.5rem;
+}
+
+.container > input[type='text']::placeholder {
+  color: var(--sub-color);
+  opacity: 1;
+}
+
+.container > button {
+  height: 2rem;
+  padding: 0 1.25rem;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: none;
+}
+
+.container > button:hover {
+  cursor: pointer;
+  background-color: var(--primary-light-color);
+}

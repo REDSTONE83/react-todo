@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  padding: 1rem 0.75rem;
+}
+
+.theme {
+  padding: 0 0.25rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  transition: color var(--transition-delay);
+  transform: scale(1.25);
+}
+
+.theme:hover {
+  color: var(--primary-light-color);
+}
+
+.theme > svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.filters > ul {
+  display: flex;
+  position: relative;
+}
+.filters > ul > li {
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-sizing: border-box;
+
+  transition: color var(--transition-delay);
+}
+.filters > ul > li + li {
+  margin-left: 0.5rem;
+}
+.filters > ul > li:hover {
+  color: var(--primary-light-color);
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--primary-color);
+
+  transition-property: left, width;
+  transition-duration: var(--transition-delay);
+}
