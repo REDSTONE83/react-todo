@@ -6,10 +6,10 @@ export default function Footer() {
   const { addToDoItem } = useContext(ToDoListContext);
   const [todoSummary, setTodoSummary] = useState('');
   const addItem = () => {
-    if (todoSummary) {
+    if (todoSummary.trim()) {
       addToDoItem(todoSummary);
-      setTodoSummary('');
     }
+    setTodoSummary('');
   };
 
   return (

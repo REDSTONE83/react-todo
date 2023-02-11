@@ -20,6 +20,10 @@
   opacity: 1;
 }
 
+.container > input[type='text']:focus-visible {
+  outline: none;
+}
+
 .container > button {
   height: 2rem;
   padding: 0 1.25rem;
