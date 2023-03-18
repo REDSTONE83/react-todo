@@ -8,7 +8,7 @@ const STORAGE_KEY = 'redstone_react_todo';
 
 export function ToDoListProvider({ children }) {
   const [todoList, setToDoList] = useState(
-    JSON.parse(localStorage.getItem(STORAGE_KEY)) || [],
+    () => JSON.parse(localStorage.getItem(STORAGE_KEY)) || [],
   );
 
   const [filter, setFilter] = useState(Filter.ALL);

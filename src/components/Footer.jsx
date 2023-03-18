@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { ToDoListContext } from '../context/ToDoListContext';
+import React, { useState } from 'react';
+import { useToDoListContext } from '../context';
 import styles from '../styles/modules/footer.module.css';
 
 export default function Footer() {
-  const { addToDoItem } = useContext(ToDoListContext);
+  const { addToDoItem } = useToDoListContext();
   const [todoSummary, setTodoSummary] = useState('');
   const addItem = () => {
     if (todoSummary.trim()) {

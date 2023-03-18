@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from '../styles/modules/header.module.css';
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
-import { ToDoListContext } from '../context/ToDoListContext';
 import { Filter } from '../constants/todoFilter';
-import { ThemeContext } from '../context/ThemeContext';
 import { Theme } from '../constants/theme';
+import { useThemeContext, useToDoListContext } from '../context';
 
 export default function Header() {
-  const { filter, setFilter } = useContext(ToDoListContext);
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { filter, setFilter } = useToDoListContext();
+  const { theme, toggleTheme } = useThemeContext();
   const [activeFilterEl, setActiveFilterEl] = useState();
 
   const filterEls = {
@@ -18,40 +17,32 @@ export default function Header() {
   };
 
   const changeFilter = (filter) => {
-    setActiveFilterEl(filterEls[filter]?.current);
     setFilter(filter);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setActiveFilterEl(filterEls[filter]?.current);
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter]);
 
   return (
     <header className={styles.container}>
-      <div className={styles.theme} onClick={() => toggleTheme()}>
+      <div className={styles.theme} onClick={toggleTheme}>
         {theme === Theme.DARK ? <BsFillSunFill /> : <BsFillMoonFill />}
       </div>
       <div className={styles.filters}>
         <ul>
-          <li
-            ref={filterEls[Filter.ALL]}
-            className={filter === Filter.ALL ? styles.active : ''}
-            onClick={() => changeFilter(Filter.ALL)}>
-            All
-          </li>
-          <li
-            ref={filterEls[Filter.ACTIVE]}
-            className={filter === Filter.ACTIVE ? styles.active : ''}
-            onClick={() => changeFilter(Filter.ACTIVE)}>
-            Active
-          </li>
-          <li
-            ref={filterEls[Filter.COMPLETED]}
-            className={filter === Filter.COMPLETED ? styles.active : ''}
-            onClick={() => changeFilter(Filter.COMPLETED)}>
-            Completed
-          </li>
+          {Object.keys(filterEls).map((key) => {
+            return (
+              <li
+                ref={filterEls[key]}
+                key={key}
+                className={filter === key ? styles.active : ''}
+                onClick={() => changeFilter(key)}>
+                {key}
+              </li>
+            );
+          })}
           <div
             className={styles.underline}
             style={{
