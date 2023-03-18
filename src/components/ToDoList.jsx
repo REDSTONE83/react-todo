@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
-import { ToDoListContext } from '../context/ToDoListContext';
+import React from 'react';
+import { useToDoListContext } from '../context';
 import styles from '../styles/modules/todo.module.css';
 import ToDoItem from './ToDoItem';
 
 export default function ToDoList() {
-  const { getTodoList } = useContext(ToDoListContext);
+  const { getTodoList } = useToDoListContext();
   return (
     <div className={styles.container}>
       <ul>

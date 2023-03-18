@@ -40,3 +40,22 @@ li {
   overflow-y: auto;
   background-color: var(--bg-sub-color);
 }
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+}
+::-webkit-scrollbar:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-sub-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--sub-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-color);
+}

@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from '../styles/modules/todo.module.css';
 import { GiCheckMark } from 'react-icons/gi';
 import { FaTrashAlt } from 'react-icons/fa';
-import { ToDoListContext } from '../context/ToDoListContext';
+import { useToDoListContext } from '../context';
 
 export default function ToDoItem({ item }) {
-  const { toggleCompleteToDoItem, removeToDoItem } =
-    useContext(ToDoListContext);
+  const { toggleCompleteToDoItem, removeToDoItem } = useToDoListContext();
 
   const toggleCompletion = () => {
     toggleCompleteToDoItem(item.itemKey);

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import ToDoList from './ToDoList';
-import { ThemeContext } from '../context/ThemeContext';
+import { useThemeContext } from '../context';
 import { ToDoListProvider } from '../context/ToDoListContext';
 
 export default function Screen() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useThemeContext();
 
   return (
     <div className={`app ${theme}`}>
